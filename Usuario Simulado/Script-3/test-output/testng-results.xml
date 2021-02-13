@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="23420" started-at="2021-02-12T22:07:43 COT" finished-at="2021-02-12T22:08:06 COT">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="23420" started-at="2021-02-12T22:07:43 COT" finished-at="2021-02-12T22:08:06 COT">
+      <class name="ExtentReportsTestNG">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ExtentReportsTestNG@74650e52]" name="setUp" is-config="true" duration-ms="76" started-at="2021-02-12T22:07:42 COT" finished-at="2021-02-12T22:07:43 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUpTest()[pri:0, instance:ExtentReportsTestNG@74650e52]" name="setUpTest" is-config="true" duration-ms="634" started-at="2021-02-12T22:07:43 COT" finished-at="2021-02-12T22:07:43 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="test1()[pri:0, instance:ExtentReportsTestNG@74650e52]" name="test1" duration-ms="15931" started-at="2021-02-12T22:07:43 COT" finished-at="2021-02-12T22:07:59 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:ExtentReportsTestNG@74650e52]" name="test2" duration-ms="6690" started-at="2021-02-12T22:07:59 COT" finished-at="2021-02-12T22:08:06 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:ExtentReportsTestNG@74650e52]" name="tearDownTest" is-config="true" duration-ms="133" started-at="2021-02-12T22:08:06 COT" finished-at="2021-02-12T22:08:06 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ExtentReportsTestNG@74650e52]" name="tearDown" is-config="true" duration-ms="193" started-at="2021-02-12T22:08:06 COT" finished-at="2021-02-12T22:08:06 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ExtentReportsTestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
