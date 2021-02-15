@@ -12,28 +12,13 @@ public class BrowserTest {
 		System.setProperty("webdriver.chromedriver.driver", "./drivers/chromedriver");
 		
 		driver.get("http://localhost:8080/");
-		
-		//Header
-		
-		
-		
-		
-		
 		driver.findElement(By.id("switch-theme")).click();
-		Thread.sleep(3000);
-		
+		Thread.sleep(10000);
 		driver.findElement(By.xpath("//body/div[@id='main']/div[@id='hero']/div[1]/div[3]/a[1]")).click();
-		Thread.sleep(3000);
-		
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//body/div[1]/div[2]/section[3]/div[2]/a[1]")).click();
-		Thread.sleep(3000);
-		
-		
+		Thread.sleep(1000);
 		driver.findElement(By.id("learn-target")).click();
-		Thread.sleep(3000);
-		/*
-		
-		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//body[1]/header[1]/nav[1]/div[2]/div[3]/ul[1]/li[2]/a[1]")).click();
 		Thread.sleep(1000);
@@ -55,7 +40,6 @@ public class BrowserTest {
 		driver.findElement(By.id("mktoCheckbox_82901_0")).click();
 		driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[2]/form[1]/div[3]")).click();
 		Thread.sleep(1000);
-		*/
 		
 		driver.close();
 	}

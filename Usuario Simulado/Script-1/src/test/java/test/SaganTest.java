@@ -12,29 +12,28 @@ public class SaganTest {
 		System.setProperty("webdriver.chromedriver.driver", "./drivers/chromedriver");
 		driver.get("http://localhost:8080/");
 		//Probar el header
-		header(driver);
+		//header(driver);
+		footer(driver);
+		Thread.sleep(3000);
 		driver.close();
 
 	}
 	
 	public static void header(WebDriver driver) throws InterruptedException {
 		Header.switch_theme(driver).click();
-		Thread.sleep(3000);
 		Header.community_target_list(driver).click();
-		Thread.sleep(3000);
 		Header.learn_target_list(driver).click();
-		Thread.sleep(3000);
 		Header.project_target_list(driver).click();
-		Thread.sleep(3000);
 		Header.why_spring_target_list(driver).click();
-		Thread.sleep(3000);
 		Header.support_target(driver).click();
-		Thread.sleep(3000);
 		Header.training_target(driver).click();
-		Thread.sleep(3000);
 		Header.spring_logo(driver).click();
-		Thread.sleep(3000);
-		
+	}
+	
+	public static void footer(WebDriver driver) throws InterruptedException {
+		Footer.email(driver).sendKeys("adam@prueba.com");
+		Footer.agree_check_box(driver).click();
+		Footer.subscribe_button(driver).click();	
 	}
 
 }
