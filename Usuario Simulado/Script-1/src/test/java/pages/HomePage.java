@@ -14,5 +14,7 @@ public class HomePage {
 		return element;
 		
 	}
+	//why spring boton
+	//driver.findElement(By.xpath("//body/div[@id='main']/div[@id='hero']/div[1]/div[3]/a[1]")).click();
 
 }
