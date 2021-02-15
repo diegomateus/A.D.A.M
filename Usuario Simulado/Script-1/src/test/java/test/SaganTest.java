@@ -33,7 +33,7 @@ public class SaganTest {
 	public static void footer(WebDriver driver) throws InterruptedException {
 		Footer.email(driver).sendKeys("adam@prueba.com");
 		Footer.agree_check_box(driver).click();
-		Footer.subscribe_button(driver).click();	
+		Footer.subscribe_button(driver).click();
+		Footer.youtube_icon(driver).click();
 	}
-
 }

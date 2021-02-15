@@ -83,6 +83,80 @@ public class Footer {
 		return element;
 	}
 	
+	public static WebElement youtube_icon(WebDriver driver) {
+		element = driver.findElement(By.id("youtube-icon"));
+		return element;
+	}
+	
+	public static WebElement github_icon(WebDriver driver) {
+		element = driver.findElement(By.id("github-icon"));
+		return element;
+	}
+	
+	public static WebElement twitter_icon(WebDriver driver) {
+		element = driver.findElement(By.id("twitter-icon"));
+		return element;
+	}
+	
+	public static WebElement microservices(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement reactive(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement event_driven(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement cloud(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement web_applications(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement serverless(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement batch(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[7]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement quickstart(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement guides(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement blog(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement events(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/ul[1]/li[1]/a[1]"));
+		return element;
+	}
+	
+	public static WebElement team(WebDriver driver) {
+		element = driver.findElement(By.xpath("//body[1]/footer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/ul[1]/li[2]/a[1]"));
+		return element;
+	}
 	
 	
 }
