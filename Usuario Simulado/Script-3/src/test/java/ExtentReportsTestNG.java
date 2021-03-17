@@ -2,6 +2,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
@@ -36,8 +37,10 @@ public class ExtentReportsTestNG {
 	
 	@BeforeTest
 	public void setUpTest() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("start-maximized");
 		System.setProperty("webdriver.chrome.driver","/home/federico/A.D.A.M/Usuario Simulado/Script-3/drivers/chromedriver/chromedriver");
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 	}
 
 	@Test
