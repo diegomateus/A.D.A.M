@@ -6,7 +6,7 @@ public class MyAdvice {
     @Advice.OnMethodEnter
     public static void enter(@Advice.Origin Class klass, @Advice.Origin("#m") String methodName) {
         Stack.push();
-        Stack.log(klass.getSimpleName() + "." + methodName + "()");
+        Stack.log(klass.getSimpleName() + "." + methodName + "() ");
     }
 
     @Advice.OnMethodExit

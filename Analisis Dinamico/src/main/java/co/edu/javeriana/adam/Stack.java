@@ -3,7 +3,7 @@ package co.edu.javeriana.adam;
 @SuppressWarnings("unused")
 public class Stack {
 
-    private static final String SPACE = " ";
+    private static final String SPACE = "   ";
     static String indent = "";
 
     public static void push() {
@@ -11,7 +11,7 @@ public class Stack {
     }
 
     public static void pop() {
-        indent = indent.substring(1);
+        indent = indent.substring(indent.length()-1);
     }
 
     public static void log(String string){

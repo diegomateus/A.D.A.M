@@ -1,6 +1,10 @@
+co/edu/javeriana/adam/Stack.java
+ co.edu.javeriana.adam.Stack
 co/edu/javeriana/adam/MyAdvice.java
  co.edu.javeriana.adam.MyAdvice
 co/edu/javeriana/adam/Agent.java
  co.edu.javeriana.adam.Agent
-co/edu/javeriana/adam/Stack.java
- co.edu.javeriana.adam.Stack
+co/edu/javeriana/adam/TimingInterceptor.java
+ co.edu.javeriana.adam.TimingInterceptor
+co/edu/javeriana/adam/AttachHelper.java
+ co.edu.javeriana.adam.AttachHelper
