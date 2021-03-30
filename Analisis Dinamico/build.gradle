@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+group 'co.edu.javeriana'
+jar.baseName = 'adamagent'
+version '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'net.bytebuddy:byte-buddy:1.10.22'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+compileJava {
+    options.debug = true
+}
+
+jar {
+    archiveName = "${rootProject.name}-${rootProject.version}.jar"
+
+    //build fat jar
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }}
+
+    manifest {
+        attributes(
+                'Premain-Class': 'co.edu.javeriana.adam.Agent',
+                'Agent-Class': 'co.edu.javeriana.adam.Agent',
+                'Can-Redefine-Classes': 'true',
+                'Can-Retransform-Classes': 'true',
+                'Can-Set-Native-Method-Prefix': 'true',
+                'Implementation-Title': "AdamAgent",
+                'Implementation-Version': rootProject.version,
+                'Built-By': System.getProperty('user.name'),
+                'Built-Date': new Date(),
+                'Built-JDK': System.getProperty('java.version')
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

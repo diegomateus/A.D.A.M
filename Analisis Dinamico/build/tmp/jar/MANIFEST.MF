@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Premain-Class: co.edu.javeriana.adam.Agent
+Agent-Class: co.edu.javeriana.adam.Agent
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Can-Set-Native-Method-Prefix: true
+Implementation-Title: AdamAgent
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: federico
+Built-Date: Mon Mar 29 18:38:19 COT 2021
+Built-JDK: 15.0.2
+
