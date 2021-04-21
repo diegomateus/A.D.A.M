@@ -3,12 +3,14 @@ package co.edu.javeriana.adam;
 import net.bytebuddy.asm.Advice;
 
 import java.time.LocalDateTime;
+import java.util.Scanner;
 import java.util.Stack;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Map.Entry;
+import java.util.StringTokenizer;
 
 import javax.imageio.ImageIO;
 
@@ -32,15 +34,40 @@ public class MyAdvice {
     public static int enter = 0;
 
     @Advice.OnMethodEnter
-    public static void enter(@Advice.Origin("#t") Class klass, @Advice.Origin("#m") String methodName) {
+    public static void enter(@Advice.Origin() Class klass, @Advice.Origin("#m") String method) {
         //id += 1;
-        StackHelper.push();
-        String firma = klass.getSimpleName() + "." + methodName + "()";
-        StackHelper.log("Entra: " + firma);
+        try {
+            if(excelStatic){
+                System.out.println("Ingrese la ruta del grafo del analisis estatico");
+                Scanner enter = new Scanner(System.in);
+                String fileRute = enter.nextLine ();
+                File file = new File (fileRute);
+                try{
+                    graph.openBook(file);
+                    excelStatic = false;
+                }
+                catch(Exception e){
+                    //TODO: POR SI NO EXISTE EL DIRECTORIO
+                }
+            }
 
-        trace.add(firma);
-        if(trace.size()>2) {
-            bandera = true;
+            String firma ="";
+            StringTokenizer st1 = new StringTokenizer(method, " ");
+            while (st1.hasMoreTokens()) {
+                String aux = st1.nextToken();
+                if(aux.contains("(")) {
+                    StringTokenizer st2 = new StringTokenizer(aux, "(");
+                    firma =  st2.nextToken();
+                }
+            }
+            trace.add(firma);
+            System.out.println(trace.size()+"---enter   "+firma);
+            if (trace.size()>2) {
+                bandera = true;
+                enter = trace.size();
+            }
+        } catch (Exception e) {
+            //trace.clear();
         }
     }
 
