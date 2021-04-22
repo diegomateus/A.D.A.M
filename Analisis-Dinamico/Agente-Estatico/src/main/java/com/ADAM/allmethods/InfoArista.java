@@ -21,7 +21,7 @@ public class InfoArista {
 	}
 
 
-	public void setContador(int contador) {
+	public void setContador() {
 		this.contador++;
 	}
 
