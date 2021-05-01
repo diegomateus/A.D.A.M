@@ -73,7 +73,8 @@ public class Conexion {
                     if(cellTempList.size() > 2){
                         subtype = cellTempList.get(3).toString();
                     }
-                    this.addNodo(label);
+                    this.addNodo(id);
+                    System.out.println(id);
                 }
                 break;
             case 1:
@@ -99,15 +100,33 @@ public class Conexion {
     }
 
     public void addArista(String keyNodo, String nodoDestino, String tipo, String label) {
-        if(verificarNodo(keyNodo)) {
-            this.graph.get(keyNodo).put(nodoDestino, new InfoArista(tipo, label));
-        }else {
+        if(!verificarNodo(keyNodo)) {
             this.addNodo(keyNodo);
+        }
+        if(verificarArista(keyNodo,nodoDestino)) {
+            this.graph.get(keyNodo).get(nodoDestino).setContador();
+        }else{
             this.graph.get(keyNodo).put(nodoDestino, new InfoArista(tipo, label));
         }
     }
 
     public boolean verificarNodo(String nombreNodo) {
         return this.graph.containsKey(nombreNodo);
+    }
+
+    public HashMap<String, HashMap<String, InfoArista>> getGraph() {
+        return graph;
+    }
+
+    public HashMap<String, InfoArista> getConexiones(String nodo) {
+        return graph.get(nodo);
+    }
+
+    public int getSize() {
+        return this.graph.size();
+    }
+
+    public boolean verificarArista(String nodo, String nodoDestino) {
+        return this.graph.get(nodo).containsKey(nodoDestino);
     }
 }
