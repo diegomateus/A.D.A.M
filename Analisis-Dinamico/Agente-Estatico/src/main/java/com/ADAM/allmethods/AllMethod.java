@@ -54,6 +54,9 @@ public class AllMethod {
 	public static LocalDateTime time = LocalDateTime.now();
 	public static Boolean excelStatic = true;
 	public static int enter = 0;
+	public static HashMap<String, Integer> trazaCompleta = new HashMap<>();
+	//public static String traza = "";
+	public static boolean nuevaBandera = false;
 	
 	@Advice.OnMethodEnter
     static void enterMethods(@Advice.Origin String method) {
@@ -81,12 +84,16 @@ public class AllMethod {
          	   firma =  st2.nextToken();
             }
         }
-		trace.add(firma);
-		//System.out.println(trace.size()+"---enter   "+firma);
-		if(trace.size()>2) {
+        
+		trace.add(firma); 
+		
+		/*if(trace.size()>2) {
 			bandera = true;
 			enter = trace.size();
-		}
+		}*/
+		
+		
+		nuevaBandera = true;
 		}catch(Exception e) {
 			//trace.clear();
 		}
@@ -94,37 +101,71 @@ public class AllMethod {
 
     @Advice.OnMethodExit
     static void getAllMethods() {
+    	
+    	
+    	if(trace.size() > 2 && nuevaBandera) {
+    		String traza = "";
+    		String origen = trace.firstElement();
+    		for(String node : trace) {
+    			traza += node+"->";
+    			if(!graph.verificarNodo(node)) graph.addNodo(node);
+				if(node!= trace.firstElement()) graph.addArista(origen, node, "", "");
+				origen = node;
+    		}
+    		
+    		if(trazaCompleta.containsKey(traza)) {
+    			int aux = trazaCompleta.get(traza);
+            	trazaCompleta.replace(traza, aux+1);
+            }else{
+            	trazaCompleta.put(traza, 1);
+            }
+    		
+    		nuevaBandera = false;
+    		trace.clear();
+    		System.out.println("%"+(java.time.Duration.between(time,LocalDateTime.now()).toMillis()*100/60000));
+    	}
+    	
+    	
     	try {
-    		String auxString = trace.pop();
+    		/*String auxString = trace.pop();
 	    	if(bandera) {
 				if (!graph.verificarNodo(auxString)) {
 					graph.addNodo(auxString);
 				}
 				if(enter-trace.size()>1) {
 					graph.addArista(auxString, nodoAnterior, "", "");
-				}
+				} 
 	    	}
-	    	nodoAnterior = auxString;
 	    	
-	    	if(trace.empty()&&bandera) {
+	    	nodoAnterior = auxString;
+	    	System.out.println(trace.empty()+"--------------------"+bandera+"-------------"+trace.size());
+	    	if(trace.empty()&&bandera) bandera = false;;
+	    	System.out.println("%"+(java.time.Duration.between(time,LocalDateTime.now()).toMillis()*100/60000));*/
+	    	
+	    	
 	    		if(java.time.Duration.between(time,LocalDateTime.now()).toMinutes()>0) {
-	    			System.out.println("entramos");
+	    			System.out.println("Documento Creado");
 	    			
 	    			Workbook workbook = new XSSFWorkbook();
 
 	    			Sheet sheet = workbook.createSheet("Nodes");
 	    			Sheet sheet2 = workbook.createSheet("Aristas");
+	    			Sheet sheet3 = workbook.createSheet("Traza Completa");
 	    			
-	    			sheet.setColumnWidth(0, 1000);
-	    			sheet.setColumnWidth(1, 1000);
+	    			sheet.setColumnWidth(0, 10000);
+	    			sheet.setColumnWidth(1, 10000);
 	    			
-	    			sheet.setColumnWidth(0, 1000);
-	    			sheet.setColumnWidth(1, 1000);
-	    			sheet.setColumnWidth(2, 1000);
-	    			sheet.setColumnWidth(3, 1000);
+	    			sheet2.setColumnWidth(0, 10000);
+	    			sheet2.setColumnWidth(1, 10000);
+	    			sheet2.setColumnWidth(2, 10000);
+	    			sheet2.setColumnWidth(3, 10000);
+	    			
+	    			sheet3.setColumnWidth(0, 10000);
+	    			sheet3.setColumnWidth(1, 10000);
 
 	    			Row header = sheet.createRow(0);
 	    			Row header2 = sheet2.createRow(0);
+	    			Row header3 = sheet3.createRow(0);
 
 	    			CellStyle headerStyle = workbook.createCellStyle();
 	    			headerStyle.setFillForegroundColor(IndexedColors.LIGHT_BLUE.getIndex());
@@ -158,6 +199,14 @@ public class AllMethod {
 	    			
 	    			headerCell = header2.createCell(4);
 	    			headerCell.setCellValue("Type");
+	    			headerCell.setCellStyle(headerStyle);
+	    			
+	    			headerCell = header3.createCell(0);
+	    			headerCell.setCellValue("Traza");
+	    			headerCell.setCellStyle(headerStyle);
+	    			
+	    			headerCell = header3.createCell(1);
+	    			headerCell.setCellValue("Calls");
 	    			headerCell.setCellStyle(headerStyle);
 	    			
 	    			CellStyle style = workbook.createCellStyle();
@@ -194,6 +243,19 @@ public class AllMethod {
 	    				}
 		    			i++;
 	    			}
+	    			int k = 2;
+	    			for(Entry<String,Integer> entry: trazaCompleta.entrySet()) {
+	    				Row row3 = sheet3.createRow(k);
+	    				
+	    				Cell cell3 = row3.createCell(0);
+		    			cell3.setCellValue(entry.getKey());
+		    			cell3.setCellStyle(style);
+		    			
+		    			cell3 = row3.createCell(1);
+		    			cell3.setCellValue(entry.getValue());
+		    			cell3.setCellStyle(style);
+		    			k++;
+	    			}
 	    			
 	    			File currDir = new File(".");
 	    			String path = currDir.getAbsolutePath();
@@ -206,8 +268,13 @@ public class AllMethod {
 	    			time = LocalDateTime.now();
 	    			
 	    		}
-	            bandera = false;
-	    	}
+	            /*if(trazaCompleta.containsKey(traza)) {
+	            	trazaCompleta.replace(traza, trazaCompleta.get(traza)+1);
+	            }else {
+	            	trazaCompleta.put(traza, 1);
+	            }
+	            traza = "";*/
+	    		trace.clear();
 	    }catch(Exception e) {
 			//id = 1;
 		}

@@ -74,7 +74,6 @@ private HashMap<String, HashMap<String, InfoArista>> graph;
 	                        subtype = cellTempList.get(3).toString();
 	                    }
 	                    this.addNodo(id);
-	                    System.out.println(id);
 	                }
 	                break;
 	            case 1:
