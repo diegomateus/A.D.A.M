@@ -57,15 +57,16 @@ public class AllMethod {
 	public static HashMap<String, Integer> trazaCompleta = new HashMap<>();
 	//public static String traza = "";
 	public static boolean nuevaBandera = false;
-	
 	@Advice.OnMethodEnter
     static void enterMethods(@Advice.Origin String method) {
 		try {
 			if(excelStatic){
-				System.out.println("Ingrese la ruta del grafo del analisis estatico");
-				Scanner enter = new Scanner(System.in); 
-				String fileRute = enter.nextLine ();
-				File file = new File (fileRute);
+				File currDir = new File(".");
+				String path = currDir.getAbsolutePath();
+				//System.out.println("Ingrese la ruta del grafo del analisis estatico");
+				//Scanner enter = new Scanner(System.in); 
+				//String fileRute = enter.nextLine ();
+				File file = new File (path.substring(0, path.length() - 1)+"analisisEstatico.xlsx");
 				try{
 					graph.openBook(file);
 					excelStatic = false;
@@ -86,6 +87,7 @@ public class AllMethod {
         }
         
 		trace.add(firma); 
+		System.out.println(firma);
 		
 		/*if(trace.size()>2) {
 			bandera = true;
@@ -107,7 +109,7 @@ public class AllMethod {
     		String traza = "";
     		String origen = trace.firstElement();
     		for(String node : trace) {
-    			traza += node+"->";
+    			traza += node+"\n";
     			if(!graph.verificarNodo(node)) graph.addNodo(node);
 				if(node!= trace.firstElement()) graph.addArista(origen, node, "", "");
 				origen = node;
