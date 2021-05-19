@@ -1,10 +1,10 @@
 package co.edu.javeriana.adam;
 
 public class InfoArista {
+
     private int contador;
     private String tipo;
     public String label;
-
 
     public InfoArista( String tipo, String label) {
         super();

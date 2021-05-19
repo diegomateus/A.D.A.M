@@ -9,13 +9,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
 public class Conexion {
-
     private HashMap<String, HashMap<String, InfoArista>> graph;
 
     public Conexion() {
@@ -23,89 +23,78 @@ public class Conexion {
         this.graph = new HashMap<>();
     }
 
-    public void openBook(File file){
-        try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
-            openSheet(workbook,0);
-            openSheet(workbook,1);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+    public void openBook(File file) throws IOException {
+        FileInputStream fileInputStream = new FileInputStream(file);
+        XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
+        openSheet(workbook, 0);
+        openSheet(workbook, 1);
     }
 
-    private void openSheet(XSSFWorkbook workbook, int sheet){
+    private void openSheet(XSSFWorkbook workbook, int sheet) {
         List<List<XSSFCell>> cellData = new ArrayList<>();
 
-        try{
-            XSSFSheet hssfSheet = workbook.getSheetAt(sheet);
+        XSSFSheet hssfSheet = workbook.getSheetAt(sheet);
 
-            Iterator<Row> rowIterator = hssfSheet.rowIterator();
+        Iterator<Row> rowIterator = hssfSheet.rowIterator();
 
-            while(rowIterator.hasNext()){
-                XSSFRow hssfRow = (XSSFRow) rowIterator.next();
-                Iterator<Cell> iterator = hssfRow.cellIterator();
-                List<XSSFCell> cellTemp = new ArrayList<>();
+        while (rowIterator.hasNext()) {
+            XSSFRow hssfRow = (XSSFRow) rowIterator.next();
+            Iterator<Cell> iterator = hssfRow.cellIterator();
+            List<XSSFCell> cellTemp = new ArrayList<>();
 
-                while (iterator.hasNext()){
-                    XSSFCell hssfCell = (XSSFCell) iterator.next();
-                    cellTemp.add(hssfCell);
-                }
-                cellData.add(cellTemp);
+            while (iterator.hasNext()) {
+                XSSFCell hssfCell = (XSSFCell) iterator.next();
+                cellTemp.add(hssfCell);
             }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+            cellData.add(cellTemp);
         }
-        getData(cellData,sheet);
+        getData(cellData, sheet);
     }
 
-    private void getData(List<List<XSSFCell>> cellDataList, int num){
+    private void getData(List<List<XSSFCell>> cellDataList, int num) {
 
-        switch (num){
+        switch (num) {
             case 0:
-                for (int i = 1; i < cellDataList.size(); i++){
+                for (int i = 1; i < cellDataList.size(); i++) {
                     List<?> cellTempList = cellDataList.get(i);
                     String id = cellTempList.get(0).toString();
                     String label = cellTempList.get(1).toString();
                     String type = cellTempList.get(2).toString();
                     String subtype = null;
-                    if(cellTempList.size() > 2){
+                    if (cellTempList.size() > 2) {
                         subtype = cellTempList.get(3).toString();
                     }
                     this.addNodo(id);
-                    System.out.println(id);
                 }
                 break;
             case 1:
-                for (int i = 1; i < cellDataList.size(); i++){
+                for (int i = 1; i < cellDataList.size(); i++) {
                     List<?> cellTempList = cellDataList.get(i);
                     String source = cellTempList.get(0).toString();
                     String target = cellTempList.get(1).toString();
                     String label = cellTempList.get(2).toString();
                     String type = cellTempList.get(3).toString();
                     this.addArista(source, target, type, label);
-
                 }
                 break;
             default:
-                // TODO: agregar error
+                System.out.println("¡La hoja no existe!");
         }
     }
 
     public void addNodo(String nombreNodo) {
-        if(!verificarNodo(nombreNodo)) {
+        if (!verificarNodo(nombreNodo)) {
             this.graph.put(nombreNodo, new HashMap<>());
         }
     }
 
     public void addArista(String keyNodo, String nodoDestino, String tipo, String label) {
-        if(!verificarNodo(keyNodo)) {
+        if (!verificarNodo(keyNodo)) {
             this.addNodo(keyNodo);
         }
-        if(verificarArista(keyNodo,nodoDestino)) {
+        if (verificarArista(keyNodo, nodoDestino)) {
             this.graph.get(keyNodo).get(nodoDestino).setContador();
-        }else{
+        } else {
             this.graph.get(keyNodo).put(nodoDestino, new InfoArista(tipo, label));
         }
     }

@@ -12,9 +12,7 @@ public class AttachHelper {
     Instrumentation inst;
 
     public static void main(String[] args) throws IOException, AttachNotSupportedException {
-        /*long pid = ProcessHandle.current().pid();
-        System.out.println(pid);*/
-        VirtualMachine vm = VirtualMachine.attach("19549");
+        VirtualMachine vm = VirtualMachine.attach("20378");
         try {
             vm.loadAgent("build/libs/Proyecto_ADAM-1.0-SNAPSHOT.jar");
             System.out.println("AGENT HAS BEEN LOADED");
