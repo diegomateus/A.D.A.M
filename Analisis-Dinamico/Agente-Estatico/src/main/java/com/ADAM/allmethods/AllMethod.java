@@ -63,9 +63,6 @@ public class AllMethod {
 			if(excelStatic){
 				File currDir = new File(".");
 				String path = currDir.getAbsolutePath();
-				//System.out.println("Ingrese la ruta del grafo del analisis estatico");
-				//Scanner enter = new Scanner(System.in); 
-				//String fileRute = enter.nextLine ();
 				File file = new File (path.substring(0, path.length() - 1)+"analisisEstatico.xlsx");
 				try{
 					graph.openBook(file);
@@ -87,17 +84,9 @@ public class AllMethod {
         }
         
 		trace.add(firma); 
-		System.out.println(firma);
-		
-		/*if(trace.size()>2) {
-			bandera = true;
-			enter = trace.size();
-		}*/
-		
 		
 		nuevaBandera = true;
 		}catch(Exception e) {
-			//trace.clear();
 		}
     }
 
@@ -129,22 +118,6 @@ public class AllMethod {
     	
     	
     	try {
-    		/*String auxString = trace.pop();
-	    	if(bandera) {
-				if (!graph.verificarNodo(auxString)) {
-					graph.addNodo(auxString);
-				}
-				if(enter-trace.size()>1) {
-					graph.addArista(auxString, nodoAnterior, "", "");
-				} 
-	    	}
-	    	
-	    	nodoAnterior = auxString;
-	    	System.out.println(trace.empty()+"--------------------"+bandera+"-------------"+trace.size());
-	    	if(trace.empty()&&bandera) bandera = false;;
-	    	System.out.println("%"+(java.time.Duration.between(time,LocalDateTime.now()).toMillis()*100/60000));*/
-	    	
-	    	
 	    		if(java.time.Duration.between(time,LocalDateTime.now()).toMinutes()>0) {
 	    			System.out.println("Documento Creado");
 	    			
@@ -270,15 +243,8 @@ public class AllMethod {
 	    			time = LocalDateTime.now();
 	    			
 	    		}
-	            /*if(trazaCompleta.containsKey(traza)) {
-	            	trazaCompleta.replace(traza, trazaCompleta.get(traza)+1);
-	            }else {
-	            	trazaCompleta.put(traza, 1);
-	            }
-	            traza = "";*/
 	    		trace.clear();
 	    }catch(Exception e) {
-			//id = 1;
 		}
     }
 }
