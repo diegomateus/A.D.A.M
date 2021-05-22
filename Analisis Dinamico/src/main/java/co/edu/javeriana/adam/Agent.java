@@ -14,7 +14,6 @@ public class Agent {
 
     public static void agentmain(String agentArgs, Instrumentation inst) {
         System.out.println("[Agent] In agentmain method");
-        System.out.println(agentArgs);
         new AgentBuilder.Default()
                 .with(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION)
                 .disableClassFormatChanges()

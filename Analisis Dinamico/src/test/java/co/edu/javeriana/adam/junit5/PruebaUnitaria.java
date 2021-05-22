@@ -4,7 +4,6 @@ import co.edu.javeriana.adam.Conexion;
 import org.junit.jupiter.api.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Stack;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -18,12 +17,12 @@ public class PruebaUnitaria {
     }
 
     @Test
-    @DisplayName("Debe encontrar el archivo del análisis estático")
+    @DisplayName("Debe encontrar el archivo de análisis estático")
     void debeLanzarFileNotFoundExceptionSiNoEncuentraElArchivo() {
         File currDir = new File(".");
         String path = currDir.getAbsolutePath();
         File file = new File (path.substring(0, path.length() - 1) + "analisisEstatico.xlsx");
-        Assertions.assertThrows(FileNotFoundException.class, () -> {
+        Assertions.assertDoesNotThrow( () -> {
             graph.openBook(file);
         });
     }
