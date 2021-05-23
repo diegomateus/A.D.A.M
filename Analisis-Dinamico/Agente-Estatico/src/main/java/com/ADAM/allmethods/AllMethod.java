@@ -49,11 +49,9 @@ public class AllMethod {
 	
 	public static Stack<String> trace = new Stack<>();
 	public static Conexion graph = new Conexion();
-	public static Boolean bandera = false;
 	public static String nodoAnterior = null;
 	public static LocalDateTime time = LocalDateTime.now();
 	public static Boolean excelStatic = true;
-	public static int enter = 0;
 	public static HashMap<String, Integer> trazaCompleta = new HashMap<>();
 	//public static String traza = "";
 	public static boolean nuevaBandera = false;
@@ -153,7 +151,7 @@ public class AllMethod {
 	    			headerStyle.setFont(font);
 
 	    			Cell headerCell = header.createCell(0);
-	    			headerCell.setCellValue("Nodes");
+	    			headerCell.setCellValue("Name");
 	    			headerCell.setCellStyle(headerStyle);
 	    			
 	    			headerCell = header2.createCell(0);
@@ -165,11 +163,11 @@ public class AllMethod {
 	    			headerCell.setCellStyle(headerStyle);
 	    			
 	    			headerCell = header2.createCell(2);
-	    			headerCell.setCellValue("#Call");
+	    			headerCell.setCellValue("Call");
 	    			headerCell.setCellStyle(headerStyle);
 	    			
 	    			headerCell = header2.createCell(3);
-	    			headerCell.setCellValue("label");
+	    			headerCell.setCellValue("Label");
 	    			headerCell.setCellStyle(headerStyle);
 	    			
 	    			headerCell = header2.createCell(4);
@@ -181,7 +179,7 @@ public class AllMethod {
 	    			headerCell.setCellStyle(headerStyle);
 	    			
 	    			headerCell = header3.createCell(1);
-	    			headerCell.setCellValue("Calls");
+	    			headerCell.setCellValue("Call");
 	    			headerCell.setCellStyle(headerStyle);
 	    			
 	    			CellStyle style = workbook.createCellStyle();

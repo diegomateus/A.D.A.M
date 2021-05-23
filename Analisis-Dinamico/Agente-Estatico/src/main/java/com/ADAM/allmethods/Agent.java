@@ -13,12 +13,9 @@ import java.lang.instrument.Instrumentation;
  */
 public class Agent {
 	
-	public static String paquete = "";
-	
 
     public static void premain(String arguments, Instrumentation instrumentation) {
         System.out.println("-------Agent for get all methods-------");
-        paquete = arguments;
         new AgentBuilder.Default()
         .with(new AgentBuilder.InitializationStrategy.SelfInjection.Eager())
         .type((ElementMatchers.nameStartsWith(arguments)))

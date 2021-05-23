@@ -3,9 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.adam</groupId>
   <artifactId>analisis-dinamico</artifactId>
-  <name>get-methods</name>
+  <name>ADAM</name>
   <version>1.0-SNAPSHOT</version>
-  <url>https://github.com/ShehanPerera/javaagent-bytebuddy</url>
   <build>
     <plugins>
       <plugin>

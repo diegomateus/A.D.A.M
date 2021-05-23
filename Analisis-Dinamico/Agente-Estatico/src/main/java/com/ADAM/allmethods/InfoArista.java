@@ -5,7 +5,7 @@ public class InfoArista {
 	
 	private int contador;
 	private String tipo;
-	public String label;
+	private String label;
 	
 	
 	public InfoArista( String tipo, String label) {

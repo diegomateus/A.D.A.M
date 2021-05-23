@@ -93,9 +93,8 @@ private HashMap<String, HashMap<String, InfoArista>> graph;
 	    }
 	    
 	    public void addNodo(String nombreNodo) {
-	    	if(!verificarNodo(nombreNodo)) {
 	    		this.graph.put(nombreNodo, new HashMap<>());
-	    	}
+
 		}
 		
 		public void addArista(String keyNodo, String nodoDestino, String tipo, String label) {
