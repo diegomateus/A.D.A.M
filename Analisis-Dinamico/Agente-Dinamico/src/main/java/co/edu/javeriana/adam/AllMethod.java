@@ -12,7 +12,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class MyAdvice {
+public class AllMethod {
 
     public static Stack<String> trace = new Stack<>();
     public static Conexion graph = new Conexion();

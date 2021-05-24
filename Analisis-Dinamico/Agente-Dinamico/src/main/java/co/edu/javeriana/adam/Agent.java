@@ -20,7 +20,7 @@ public class Agent {
                 .type(ElementMatchers.nameStartsWith("org.springframework.samples"))
                 .transform((builder, typeDescription, classLoader, module) -> {
                     return builder
-                            .visit(Advice.to(MyAdvice.class).on(ElementMatchers.any()));
+                            .visit(Advice.to(AllMethod.class).on(ElementMatchers.any()));
                 })
                 .installOn(inst);
     }
