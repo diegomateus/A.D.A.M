@@ -1,0 +1,3 @@
+Se tienen que cambiar el usuario y la contraseña en el archivo aplication.properties segun la base de datos usada y tambien el url de la misma.
+Se debe ejecutar la aplicacion con un jdk 8. Se recomienda la versión 111 del mismo.
+Los .sql sirven para ejecutarlos en la base de datos para crear datos y seguir la secuencia de indices de forma correcta. Se recomienda correrlos antes de ejecutar el script en jmeter.
