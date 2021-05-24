@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.edu.javeriana.adam.junit5.PruebaUnitaria" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-20T18:14:48" hostname="thinkpad-t490" time="0.519">
+  <properties/>
+  <testcase name="Debe agregar el nodo al grafo" classname="co.edu.javeriana.adam.junit5.PruebaUnitaria" time="0.008"/>
+  <testcase name="Debe agregar la firma a la pila de ejecución" classname="co.edu.javeriana.adam.junit5.PruebaUnitaria" time="0.001"/>
+  <testcase name="Debe retornar las conexiones del grafo" classname="co.edu.javeriana.adam.junit5.PruebaUnitaria" time="0.001"/>
+  <testcase name="Debe agregar la arista al grafo" classname="co.edu.javeriana.adam.junit5.PruebaUnitaria" time="0.002"/>
+  <testcase name="Debe encontrar el archivo del análisis estático" classname="co.edu.javeriana.adam.junit5.PruebaUnitaria" time="0.506"/>
+  <system-out><![CDATA[Iniciando las pruebas...
+Prueba terminada.
+Prueba terminada.
+Prueba terminada.
+Prueba terminada.
+Prueba terminada.
+¡Fin de las pruebas!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
