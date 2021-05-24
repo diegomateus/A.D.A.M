@@ -19,12 +19,12 @@ public class PruebaUnitaria extends TestCase {
     }
 
     @Test
-    @DisplayName("Debe encontrar el archivo del análisis estático")
+    @DisplayName("Debe encontrar el archivo de análisis estático")
     void debeLanzarFileNotFoundExceptionSiNoEncuentraElArchivo() {
         File currDir = new File(".");
         String path = currDir.getAbsolutePath();
         File file = new File (path.substring(0, path.length() - 1) + "analisisEstatico.xlsx");
-        Assertions.assertThrows(FileNotFoundException.class, () -> {
+        Assertions.assertDoesNotThrow( () -> {
             graph.openBook(file);
         });
     }

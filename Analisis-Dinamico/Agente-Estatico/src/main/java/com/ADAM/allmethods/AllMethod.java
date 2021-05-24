@@ -121,9 +121,9 @@ public class AllMethod {
 	    			
 	    			Workbook workbook = new XSSFWorkbook();
 
-	    			Sheet sheet = workbook.createSheet("Nodes");
-	    			Sheet sheet2 = workbook.createSheet("Aristas");
-	    			Sheet sheet3 = workbook.createSheet("Traza Completa");
+	    			Sheet sheet = workbook.createSheet("Node");
+	    			Sheet sheet2 = workbook.createSheet("Arista");
+	    			Sheet sheet3 = workbook.createSheet("Traza");
 	    			
 	    			sheet.setColumnWidth(0, 10000);
 	    			sheet.setColumnWidth(1, 10000);
