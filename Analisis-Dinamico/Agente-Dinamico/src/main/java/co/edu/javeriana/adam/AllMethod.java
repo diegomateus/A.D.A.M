@@ -19,20 +19,20 @@ public class AllMethod {
     public static Boolean bandera = false;
     public static String nodoAnterior = null;
     public static LocalDateTime time = LocalDateTime.now();
-    public static Boolean excelStatic = true;
+    public static Boolean isFile = true;
     public static int enter = 0;
     public static HashMap<String, Integer> trazaCompleta = new HashMap<>();
     public static boolean isTrace = false;
 
     @Advice.OnMethodEnter
     static void enterMethods(@Advice.Origin String method) {
-        if (excelStatic) {
+        if (isFile) {
             File currDir = new File(".");
             String path = currDir.getAbsolutePath();
             File file = new File(path.substring(0, path.length() - 1) + "analisisEstatico.xlsx");
             try {
                 graph.openBook(file);
-                excelStatic = false;
+                isFile = false;
                 System.out.println("Se leyó exitosamente el archivo de análisis estático...");
             } catch (Exception e) {
                 System.out.println("¡No existe el directorio solicitado!");
