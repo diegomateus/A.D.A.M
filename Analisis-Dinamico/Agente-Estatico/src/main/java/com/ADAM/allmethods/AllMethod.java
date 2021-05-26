@@ -54,7 +54,7 @@ public class AllMethod {
 	public static Boolean excelStatic = true;
 	public static HashMap<String, Integer> trazaCompleta = new HashMap<>();
 	//public static String traza = "";
-	public static boolean nuevaBandera = false;
+	public static boolean isTrace = false;
 	@Advice.OnMethodEnter
     static void enterMethods(@Advice.Origin String method) {
 		try {
@@ -83,7 +83,7 @@ public class AllMethod {
         
 		trace.add(firma); 
 		
-		nuevaBandera = true;
+		isTrace = true;
 		}catch(Exception e) {
 		}
     }
@@ -92,7 +92,7 @@ public class AllMethod {
     static void getAllMethods() {
     	
     	
-    	if(trace.size() > 2 && nuevaBandera) {
+    	if(trace.size() > 2 && isTrace) {
     		String traza = "";
     		String origen = trace.firstElement();
     		for(String node : trace) {
@@ -109,7 +109,7 @@ public class AllMethod {
             	trazaCompleta.put(traza, 1);
             }
     		
-    		nuevaBandera = false;
+    		isTrace = false;
     		trace.clear();
     		System.out.println("%"+(java.time.Duration.between(time,LocalDateTime.now()).toMillis()*100/60000));
     	}

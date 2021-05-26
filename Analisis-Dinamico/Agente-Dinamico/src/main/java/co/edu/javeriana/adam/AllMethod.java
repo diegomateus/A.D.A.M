@@ -22,7 +22,7 @@ public class AllMethod {
     public static Boolean excelStatic = true;
     public static int enter = 0;
     public static HashMap<String, Integer> trazaCompleta = new HashMap<>();
-    public static boolean nuevaBandera = false;
+    public static boolean isTrace = false;
 
     @Advice.OnMethodEnter
     static void enterMethods(@Advice.Origin String method) {
@@ -52,13 +52,13 @@ public class AllMethod {
 
         trace.add(firma);
         System.out.println(firma);
-        nuevaBandera = true;
+        isTrace = true;
     }
 
     @Advice.OnMethodExit
     static void getAllMethods() {
 
-        if (trace.size() > 2 && nuevaBandera) {
+        if (trace.size() > 2 && isTrace) {
             String traza = "";
             String origen = trace.firstElement();
             for (String node : trace) {
@@ -75,7 +75,7 @@ public class AllMethod {
                 trazaCompleta.put(traza, 1);
             }
 
-            nuevaBandera = false;
+            isTrace = false;
             trace.clear();
             System.out.println("%" + (java.time.Duration.between(time, LocalDateTime.now()).toMillis() * 100 / 60000));
         }
