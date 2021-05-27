@@ -1,2 +1,2 @@
 # A.D.A.M
-Trabajo de tesis
+Trabajo de Grado
