@@ -1,38 +1,38 @@
-2021-05-24 18:49:31,496 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2021-05-24 18:49:31,546 INFO o.a.j.JMeter: Loading user properties from: /usr/local/Cellar/jmeter/5.4.1/libexec/bin/user.properties
-2021-05-24 18:49:31,546 INFO o.a.j.JMeter: Loading system properties from: /usr/local/Cellar/jmeter/5.4.1/libexec/bin/system.properties
-2021-05-24 18:49:31,558 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
-2021-05-24 18:49:31,559 INFO o.a.j.JMeter: Version 5.4.1
-2021-05-24 18:49:31,559 INFO o.a.j.JMeter: java.version=15.0.2
-2021-05-24 18:49:31,559 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
-2021-05-24 18:49:31,559 INFO o.a.j.JMeter: os.name=Mac OS X
-2021-05-24 18:49:31,559 INFO o.a.j.JMeter: os.arch=x86_64
-2021-05-24 18:49:31,559 INFO o.a.j.JMeter: os.version=10.15.2
-2021-05-24 18:49:31,559 INFO o.a.j.JMeter: file.encoding=UTF-8
-2021-05-24 18:49:31,559 INFO o.a.j.JMeter: java.awt.headless=null
-2021-05-24 18:49:31,560 INFO o.a.j.JMeter: Max memory     =1073741824
-2021-05-24 18:49:31,560 INFO o.a.j.JMeter: Available Processors =4
-2021-05-24 18:49:31,574 INFO o.a.j.JMeter: Default Locale=English (EN)
-2021-05-24 18:49:31,574 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2021-05-24 18:49:31,575 INFO o.a.j.JMeter: JMeterHome=/usr/local/Cellar/jmeter/5.4.1/libexec
-2021-05-24 18:49:31,575 INFO o.a.j.JMeter: user.dir  =/Users/williambaquero/Documents/GitHub/A.D.A.M/Analisis-Dinamico
-2021-05-24 18:49:31,575 INFO o.a.j.JMeter: PWD       =/Users/williambaquero/Documents/GitHub/A.D.A.M/Analisis-Dinamico
-2021-05-24 18:49:49,601 INFO o.a.j.JMeter: IP: 192.168.1.17 Name: MacPro-WABR.local FullName: 192.168.1.17
-2021-05-24 18:49:49,616 INFO o.a.j.s.FileServer: Default base='/Users/williambaquero/Documents/GitHub/A.D.A.M/Analisis-Dinamico'
-2021-05-24 18:49:49,617 INFO o.a.j.s.FileServer: Set new base='/Users/williambaquero/Documents/GitHub/A.D.A.M/Usuario-Simulado/Script-2'
-2021-05-24 18:49:49,853 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2021-05-24 18:49:49,891 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
-2021-05-24 18:49:49,897 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2021-05-24 18:49:49,902 INFO o.a.j.s.SaveService: Loading file: /Users/williambaquero/Documents/GitHub/A.D.A.M/Usuario-Simulado/Script-2/Script2.jmx
-2021-05-24 18:49:49,960 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
-2021-05-24 18:49:49,965 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
-2021-05-24 18:49:49,990 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-24 18:49:49,990 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-24 18:49:49,990 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-24 18:49:49,990 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-24 18:49:49,990 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2021-05-24 18:49:49,991 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2021-05-24 18:49:50,055 ERROR o.a.j.JMeter: Error in NonGUIDriver
+2021-05-27 17:35:17,044 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2021-05-27 17:35:17,084 INFO o.a.j.JMeter: Loading user properties from: /usr/local/Cellar/jmeter/5.4.1/libexec/bin/user.properties
+2021-05-27 17:35:17,086 INFO o.a.j.JMeter: Loading system properties from: /usr/local/Cellar/jmeter/5.4.1/libexec/bin/system.properties
+2021-05-27 17:35:17,098 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2021-05-27 17:35:17,099 INFO o.a.j.JMeter: Version 5.4.1
+2021-05-27 17:35:17,099 INFO o.a.j.JMeter: java.version=15.0.2
+2021-05-27 17:35:17,099 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2021-05-27 17:35:17,099 INFO o.a.j.JMeter: os.name=Mac OS X
+2021-05-27 17:35:17,100 INFO o.a.j.JMeter: os.arch=x86_64
+2021-05-27 17:35:17,100 INFO o.a.j.JMeter: os.version=10.15.2
+2021-05-27 17:35:17,100 INFO o.a.j.JMeter: file.encoding=UTF-8
+2021-05-27 17:35:17,100 INFO o.a.j.JMeter: java.awt.headless=null
+2021-05-27 17:35:17,100 INFO o.a.j.JMeter: Max memory     =1073741824
+2021-05-27 17:35:17,100 INFO o.a.j.JMeter: Available Processors =4
+2021-05-27 17:35:17,114 INFO o.a.j.JMeter: Default Locale=English (EN)
+2021-05-27 17:35:17,114 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2021-05-27 17:35:17,115 INFO o.a.j.JMeter: JMeterHome=/usr/local/Cellar/jmeter/5.4.1/libexec
+2021-05-27 17:35:17,115 INFO o.a.j.JMeter: user.dir  =/Users/williambaquero/Documents/GitHub/A.D.A.M/Analisis-Dinamico
+2021-05-27 17:35:17,115 INFO o.a.j.JMeter: PWD       =/Users/williambaquero/Documents/GitHub/A.D.A.M/Analisis-Dinamico
+2021-05-27 17:35:17,142 INFO o.a.j.JMeter: IP: 192.168.1.15 Name: MacPro-WABR FullName: macpro-wabr
+2021-05-27 17:35:17,150 INFO o.a.j.s.FileServer: Default base='/Users/williambaquero/Documents/GitHub/A.D.A.M/Analisis-Dinamico'
+2021-05-27 17:35:17,151 INFO o.a.j.s.FileServer: Set new base='/Users/williambaquero/Documents/GitHub/A.D.A.M/Usuario-Simulado/Script-2'
+2021-05-27 17:35:17,403 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2021-05-27 17:35:17,444 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2021-05-27 17:35:17,451 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2021-05-27 17:35:17,455 INFO o.a.j.s.SaveService: Loading file: /Users/williambaquero/Documents/GitHub/A.D.A.M/Usuario-Simulado/Script-2/Script2.jmx
+2021-05-27 17:35:17,520 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2021-05-27 17:35:17,525 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2021-05-27 17:35:17,552 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-27 17:35:17,552 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-27 17:35:17,552 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-27 17:35:17,553 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-27 17:35:17,553 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2021-05-27 17:35:17,553 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2021-05-27 17:35:17,625 ERROR o.a.j.JMeter: Error in NonGUIDriver
 java.lang.IllegalArgumentException: Problem loading XML from:'/Users/williambaquero/Documents/GitHub/A.D.A.M/Usuario-Simulado/Script-2/Script2.jmx'. 
 Cause:
 CannotResolveClassException: kg.apc.jmeter.vizualizers.CorrectedResultCollector
@@ -157,7 +157,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: kg.apc.j
 	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1273) ~[xstream-1.4.15.jar:1.4.15]
 	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:449) ~[ApacheJMeter_core.jar:5.4.1]
 	... 9 more
-2021-05-24 18:49:50,071 ERROR o.a.j.JMeter: An error occurred: 
+2021-05-27 17:35:17,640 ERROR o.a.j.JMeter: An error occurred: 
 org.apache.jmeter.report.config.ConfigurationException: Error in NonGUIDriver Problem loading XML from:'/Users/williambaquero/Documents/GitHub/A.D.A.M/Usuario-Simulado/Script-2/Script2.jmx'. 
 Cause:
 CannotResolveClassException: kg.apc.jmeter.vizualizers.CorrectedResultCollector
